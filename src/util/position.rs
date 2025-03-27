@@ -21,7 +21,6 @@ pub fn point_in_rect(
         && mouse_y <= (rect_y + rect_height)
 }
 
-/// Extracts an f64 from a CFDictionary for the given key.
 pub unsafe fn get_double_from_cf_dict(
     dict: &core_foundation::dictionary::CFDictionary<CFString, CFTypeRef>,
     key: &str,

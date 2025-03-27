@@ -2,6 +2,14 @@
 
 Oxrise is a Rust-based project designed to interact with macOS windows and applications. It provides utilities to detect the window under the mouse cursor, retrieve window information, and programmatically focus on applications. This project leverages macOS-specific APIs and libraries to achieve its functionality.
 
+## Installation
+
+Run the following command to install `oxrise`:
+
+```bash
+curl -sSfL https://raw.githubusercontent.com/SouchonTheo/oxrise/main/install.sh | sh
+```
+
 ## Features
 
 - Detect the window currently under the mouse cursor.

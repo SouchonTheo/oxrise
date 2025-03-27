@@ -6,7 +6,7 @@ edition = "2021"
 [dependencies]
 core-graphics = "0.22"
 core-foundation = "0.9"
-cocoa = "0.24"
 objc = "0.2"
 libc = "0.2"
 lazy_static = "1.4"
+clap = "4.5.34"

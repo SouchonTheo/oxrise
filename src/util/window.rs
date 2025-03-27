@@ -28,7 +28,6 @@ pub unsafe fn find_window_under_mouse(mouse_x: f64, mouse_y: f64) -> Option<Wind
                 dict_ptr as *const _,
             );
 
-        // Filtre sur le layer.
         let key_layer = CFString::new("kCGWindowLayer");
         let layer_ptr = CFDictionaryGetValue(
             dict.as_concrete_TypeRef(),
@@ -43,7 +42,6 @@ pub unsafe fn find_window_under_mouse(mouse_x: f64, mouse_y: f64) -> Option<Wind
             }
         }
 
-        // Récupération des bounds.
         let key_bounds = CFString::new("kCGWindowBounds");
         let bounds_ptr = CFDictionaryGetValue(
             dict.as_concrete_TypeRef(),
@@ -62,7 +60,6 @@ pub unsafe fn find_window_under_mouse(mouse_x: f64, mouse_y: f64) -> Option<Wind
         let height = get_double_from_cf_dict(&bounds_dict, "Height");
 
         if point_in_rect(mouse_x, mouse_y, x, y, width, height) {
-            // Récupération du nom du propriétaire.
             let key_owner = CFString::new("kCGWindowOwnerName");
             let owner_ptr = CFDictionaryGetValue(
                 dict.as_concrete_TypeRef(),
